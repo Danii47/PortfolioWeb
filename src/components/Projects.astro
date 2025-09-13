@@ -2,6 +2,10 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import React from "./icons/React.astro"
+import Typescript from "./icons/Typescript.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -11,29 +15,103 @@ const TAGS = {
     class: "bg-black text-white",
     icon: NextJS,
   },
+  REACTJS: {
+    name: "ReactJS",
+    class: "bg-black text-white",
+    icon: React,
+  },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-black text-white",
     icon: Tailwind,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-black text-white",
+    icon: MongoDB,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-black text-white",
+    icon: Typescript,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Desarrollo conjunto web SUGUS",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Desarrollo completo de la página sugusuva.es/47CON de la asociación de ciberseguridad SUGUS, además de pertenecer a la misma. Esta página fue creada para mostrar todo tipo de información sobre el evento 47CON, el primer congreso de ciberseguridad de Valladolid, organizado por SUGUS.",
+    image: "/projects/sugus.webp",
+    link: "https://sugusuva.es/47CON",
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Generador de QRs",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Generador de QRs a partir de un texto o una URL, permite personalización de color y forma del QR, sin tiempo de caducidad. Hecho con ReactJS y SIN librerías.",
+    link: "https://qr-generator-wheat.vercel.app/",
+    github: "https://github.com/Danii47/QR-Generator",
+    image: "/projects/qr-generator.webp",
+    tags: [TAGS.REACTJS],
+  },
+  {
+    title: "Ajedrez con IA",
+    description:
+      "Juego estándar del ajedrez con la opción de poder jugar contra un oponente en local o contra una IA de nivel bajo-medio usando el algoritmo min-max. Incluye almacenamiento en localstorage. ReactJS.",
+    link: "https://chess-omega-five.vercel.app/",
+    github: "https://github.com/Danii47/chess",
+    image: "/projects/chess-ia.webp",
+    tags: [TAGS.REACTJS],
+  },
+  {
+    title: "Conversor de bases dinámico",
+    description:
+      "Un conversor de bases que tiene la implementación de poder hacer operaciones con los números en distintas bases. Bases soportadas: binario, octal, decimal y hexadecimal. Astro + React + TypeScript.",
+    link: "https://chess-omega-five.vercel.app/",
+    github: "https://github.com/Danii47/chess",
+    image: "/projects/base-converter.webp",
+    tags: [TAGS.ASTRO,TAGS.REACTJS, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Conecta 4",
+    description:
+      "uego de conecta 4 / 4 en raya que permite cambiar el tamaño del tablero. Desarrollado con ReactJS.",
+    link: "https://connect-4-rho.vercel.app/",
+    github: "https://github.com/Danii47/connect-4",
+    image: "/projects/connect-4.webp",
+    tags: [TAGS.REACTJS],
+  },
+  {
+    title: "Buscar información IP",
+    description:
+      "Buscador de geolocalización IP con API de Google Maps e información sobre la misma a través de la API de freeipapi. React + TypeScript.",
+    link: "https://search-ip-info.vercel.app/",
+    github: "https://github.com/Danii47/search-ip-info",
+    image: "/projects/connect-4.webp",
+    tags: [TAGS.REACTJS, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "Juego del 3 en raya desarrollado con ReactJS.",
+    link: "https://tic-tac-toe-ten-lime.vercel.app/",
+    github: "https://github.com/Danii47/tic-tac-toe",
+    image: "/projects/tictactoe.webp",
+    tags: [TAGS.REACTJS],
+  },
+  {
+    title: "Clon de Google Sheets",
+    description:
+      "Clon simple del excel de google, resize de filas y columnas, diseño de la aplicación original. Sin evaluaciones de funciones. React + TypeScript",
+    link: "https://excel-clone-delta.vercel.app/",
+    github: "https://github.com/Danii47/excel-clone",
+    image: "/projects/googlesheet-clon.webp",
+    tags: [TAGS.REACTJS, TAGS.TYPESCRIPT],
   },
 ]
 ---
@@ -44,7 +122,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
